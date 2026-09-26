@@ -1,14 +1,14 @@
 {
-  "versionCode": 282,
-  "versionName": "7.12.33",
-  "title": "R262 «ВЕРДИКТ» — честная проверка штаба",
-  "notes": "Корень найден боем: запись в штаб работала всегда (ваши .probe и 5 аплинков 08:22 UTC в репозитории), врела строка вердикта проверки (Pair никогда не null). Исправлено одной строкой: вердикт по .first. Нажмите «Проверить штаб» — теперь честно.",
-  "apkUrl": "https://filebin.net/r259binbot/r262_7_12_33_apk.bin",
+  "versionCode": 283,
+  "versionName": "7.12.34",
+  "title": "R263 «ДВЕ СТОРОНЫ» — детектор состояния, которое жило без сигнала",
+  "notes": "Сторож «обе стороны в минусе»: событие на входе (порог 2% эквити на сторону, как у класса DEEP), heartbeat каждые 3 ч внутри состояния, событие выхода с длительностью. Персист через снимок — рестарт не спамит. Метка bm в облачном дайджесте — Криптогуру видит состояние удалённо. Только наблюдаемость: авто-действий нет. Плюс: git-зеркало релиза в обоих filebin.",
+  "apkUrl": "https://filebin.net/r259binbot/r263_7_12_34_apk.bin",
   "apkMirrors": [
-    "https://filebin.net/r259binmirror/r262_7_12_33_apk.bin"
+    "https://filebin.net/r259binmirror/r263_7_12_34_apk.bin"
   ],
-  "apkSha256": "c709eb6a4390bb6abaf199057f723137abb676aa67b199d83708bcaa31c14999",
-  "patchUrl": "https://filebin.net/r259binbot/r262_7_12_33_patch.bin",
-  "mandatory": true,
-  "publishedMs": 1790416000000
+  "apkSha256": "865fcbed61466afe57faa0491be6e6321b15e39ac0fca325276c49b62227e133",
+  "patchUrl": "https://filebin.net/r259binbot/r263_7_12_34_patch.bin",
+  "mandatory": false,
+  "publishedMs": 1790459000000
 }
