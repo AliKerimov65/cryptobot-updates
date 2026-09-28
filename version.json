@@ -1,14 +1,14 @@
 {
-  "versionCode": 287,
-  "versionName": "7.12.38",
-  "title": "R268 «РАДАР» — ИМПУЛЬС-РАДАР: радар новых листингов и импульсов Bybit, только рекомендации",
-  "notes": "РАДАР (ПАМЯТЬ R179-Д, проверенные источники): контур наблюдения — Bybit announcements GET /v5/announcements/index (заголовки New Listing), instruments-info launchTime (свежесть листинга ≤7 суток), bulk-tickers linear (funding/OI/turnover/preOpenPrice/curPreListingPhase). Карточки четырёх видов: ПРЕД-ЛИСТИНГ (фаза + preOpen), ЛИСТИНГ-АНОНС (заголовок Bybit), ИМПУЛЬС (|Δ24ч| ≥ 15% при обороте ≥ $50M), ФАНДИНГ (|фандинг| ≥ 0,1% — 10× базы 0,01%). Пороги — стартовые константы, калибруются по замеру (доктрина R265). Железные ограничения R223: только GET, публичные эндпоинты без ключей, таймаут 5 с, fail-closed (ошибка сети → последний живой кэш), опрос 30 мин, персист в Prefs. Событие 📡 в журнале на НОВОГО кандидата + сводка impulseRadar в штаб-дайджесте. ТОЛЬКО РЕКОМЕНДАЦИИ: ни одного ордера, влияния на механику бота нет; авто-действия отсутствуют как класс. CryptoPanic free API закрыт с 01.04.2026 — не используется.",
-  "apkUrl": "https://filebin.net/r259binbot/r268_7_12_38_apk.bin",
+  "versionCode": 288,
+  "versionName": "7.12.39",
+  "title": "R269 «ЧИСТАЯ СИМУЛЯЦИЯ» — контур ликвидации изъят из режима Симуляции",
+  "notes": "По команде штаба: в Симуляции контура ликвидации больше нет — счёт не ликвидируется, ноги живут до своих TP (R110). Изъято: катастрофа paperLiquidationCheck (ликвидация счёта + стоп бота), ранний перехват R188/earlyBlock (13 позиций: гейты входов, стейт, кодек снимка, clearBrakes), синтетический сторож paperSideLiq с полями paperLiqL/S, paper-ветка сторожа liqGuardTick (осталась только гигиена: снятие старых защёлок, нулевые дистанции), фолбэк paperLiqOf в PIM, подгонка размера fitProjectedLiq в paper (байпас). Сохранено сознательно: live-контур ликвидации по биржевым данным exchLiq (сверка 60 с) не тронут, математика маржи mmrFor, солвенси-гейты входов R180 Ц2 и R245 (контур риска входов, не ликвидации). Старые снимки состояния читаются штатно (поле eb игнорируется). Тексты помощи и наблюдаемости приведены к правде: прямо сказано, что в симуляции контура ликвидации нет. 39 якорных правок, zero-residue grep, сертификат c36825fa… неизменен.",
+  "apkUrl": "https://filebin.net/r259binbot/cryptobot_7.12.39_vc288.apk.zip",
   "apkMirrors": [
-    "https://filebin.net/r259binmirror/r268_7_12_38_apk.bin"
+    "https://filebin.net/r259binmirror/cryptobot_7.12.39_vc288.apk.zip"
   ],
-  "apkSha256": "fb7b2ee6ef0dcba3b7c929835c2bea8e9379b38d6f3819eca3b9e68cede3c232",
-  "patchUrl": "https://filebin.net/r259binbot/r268_7_12_38_patch.bin",
+  "apkSha256": "7c3ef3a5c88825c3315e7c0df71ae0fc96fbe252a648f54dfc1579bbafc3bb14",
+  "patchUrl": "https://filebin.net/r259binbot/R269_7.12.39_vc288.patch",
   "mandatory": false,
-  "publishedMs": 1790504700000
+  "publishedMs": 1790569373697
 }
